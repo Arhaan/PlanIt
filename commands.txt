@@ -1,0 +1,6 @@
+setEvent: se //To set a new Event
+quitCommand: quit   //To quit the program
+deleteEvent: delete //Delete an event : `deleteCommand eventStartTime` 
+displayCommand: disp //display an event :  `displayCommand`
+helpCommand: help // To get help. Thjs command cannot be changed : `help`
+changeCommand: change // To change a command : `changeCommand commandName newName`
