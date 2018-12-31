@@ -191,8 +191,6 @@ def takeCommand():
 			err("Wrong Input")
 	else: err("Wrong Input!!!")
 
-
-
 while(takeCommand()!=-1):
 	pass
 	
