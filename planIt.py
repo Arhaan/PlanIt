@@ -4,7 +4,7 @@ commandFile = open("commands.txt","r")
 commandArray = commandFile.readlines()
 
 class commands:
-	
+	#Stores the various commands
 	setCommand = commandArray[0].split(" ")[1].strip()
 	quitCommand = commandArray[1].split(" ")[1].strip()
 	deleteCommand = commandArray[2].split(" ")[1].strip()
@@ -12,6 +12,7 @@ class commands:
 	helpCommand = commandArray[4].split(" ")[1].strip()
 	changeCommandShortcut = commandArray[5].split(" ")[1].strip()
 class bcolors:
+	#Stores the various colours for output formatting
     HEADER = '\033[95m'
     BLUEDEB = '\033[94m'
     OKGREEN = '\03based day 3[92m'
@@ -20,21 +21,21 @@ class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
-def inp():
+def inp(): #Takes Input from the user
 	s = input(">>>>")
 	return s
-def pr(s):
+def pr(s): #Prints to the console
 	print(">>>>",s)
-def deb(s):
+def deb(s): #For debug statments
 	print(bcolors.BLUEDEB,">>>>",s,bcolors.ENDC)#debug statements
 	pass
-def err(s):
+def err(s): #For error and warning statments to the user
 	print(bcolors.WARNING,">>>>",s,"For assistance type 'help'",bcolors.ENDC)
-def sendInfoToUser(s):
+def sendInfoToUser(s): #Other warnings
 	print(bcolors.WARNING,">>>>",s,bcolors.ENDC)
-def success(s):
+def success(s): #For a positive feedback
 	print(bcolors.OKGREEN,">>>>"+s+bcolors.ENDC)
-def checkIfTimingIsFree(start , end):
+def checkIfTimingIsFree(start , end): #Checks if we the timing of the new event is free
 	with open(tt, "r") as fl:
 		arr = fl.readlines()
 		for a in arr:
@@ -174,6 +175,9 @@ def takeCommand():
 		except:
 			err("Wrong Input")
 	else: err("Wrong Input!!!")
+
+
+		
 while(takeCommand()!=-1):
 	pass
 	
