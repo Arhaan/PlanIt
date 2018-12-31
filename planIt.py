@@ -10,11 +10,11 @@ class commands:
 	deleteCommand = commandArray[2].split(" ")[1].strip()
 	displayCommand = commandArray[3].split(" ")[1].strip()
 	helpCommand = commandArray[4].split(" ")[1].strip()
-	changeCommand = commandArray[5].split(" ")[1].strip()
+	changeCommandShortcut = commandArray[5].split(" ")[1].strip()
 class bcolors:
     HEADER = '\033[95m'
     BLUEDEB = '\033[94m'
-    OKGREEN = '\033[92m'
+    OKGREEN = '\03based day 3[92m'
     WARNING = '\033[93m'
     FAIL = '\033[91m'
     ENDC = '\033[0m'
@@ -87,7 +87,7 @@ def help():
 	commandArray = commandFile.readlines()
 	for i in commandArray:
 		sendInfoToUser(i)
-def changeCommand(name, newName):
+def changeCommandShortcut(name, newName):
 	if(name == 'help'):
 		sendInfoToUser("This event can't be changed")
 		return
@@ -166,11 +166,11 @@ def takeCommand():
 		display()
 	elif(c == commands.helpCommand):
 		help()
-	elif(c == commands.changeCommand):
+	elif(c == commands.changeCommandShortcut):
 		try:
 			name = comm[1]
 			newName = comm[2] 
-			changeCommand(name, newName)
+			changeCommandShortcut(name, newName)
 		except:
 			err("Wrong Input")
 	else: err("Wrong Input!!!")
