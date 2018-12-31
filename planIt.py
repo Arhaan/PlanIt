@@ -15,12 +15,13 @@ class bcolors:
 	#Stores the various colours for output formatting
     HEADER = '\033[95m'
     BLUEDEB = '\033[94m'
-    OKGREEN = '\03based day 3[92m'
+    OKGREEN = '\033[92m'
     WARNING = '\033[93m'
     FAIL = '\033[91m'
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
+#I/O formatting start
 def inp(): #Takes Input from the user
 	s = input(">>>>")
 	return s
@@ -34,7 +35,8 @@ def err(s): #For error and warning statments to the user
 def sendInfoToUser(s): #Other warnings
 	print(bcolors.WARNING,">>>>",s,bcolors.ENDC)
 def success(s): #For a positive feedback
-	print(bcolors.OKGREEN,">>>>"+s+bcolors.ENDC)
+	print(bcolors.OKGREEN,">>>>",s,bcolors.ENDC)
+#IO formatting end
 def checkIfTimingIsFree(start , end): #Checks if we the timing of the new event is free
 	with open(tt, "r") as fl:
 		arr = fl.readlines()
@@ -54,6 +56,16 @@ def checkIfTimingIsFree(start , end): #Checks if we the timing of the new event 
 					return False
 
 	return True
+def sortTimeTable():
+	with open(tt,"r") as fl:
+		arr = fl.readlines()
+	#Sort the array
+	def sortSecond(val):
+		return val.split(" ")[1]
+	arr.sort(key = sortSecond)
+	with open(tt, "w") as fl:
+		for a in arr:
+			fl.write(a)
 def deleteEvent(name, start):
 	deleted = False
 	with open(tt, "r") as fl:
@@ -70,6 +82,7 @@ def deleteEvent(name, start):
 		err("Event to delete not present in timetable")
 	else:
 		success("Event deleted")
+	sortTimeTable()
 def formatHHMM(s):
 	if(len(s) == 1):
 		s = "0"+s+"00"
@@ -79,10 +92,11 @@ def formatHHMM(s):
 			s = "0"+s
 	return s
 def display():
+	sortTimeTable()
 	with open(tt, "r") as fl:
 		f = fl.readlines()
 		for i in f:
-			pr(i)
+			success(i)
 def help():
 	commandFile = open("commands.txt","r")
 	commandArray = commandFile.readlines()
@@ -154,6 +168,7 @@ def takeCommand():
 		with open(tt,"a") as f:
     			f.write(name+" "+start+" "+end+"\n")
 		pr(bcolors.OKGREEN+"Event Set!!"+bcolors.ENDC)
+		sortTimeTable()
 		return
 	elif (c == commands.deleteCommand):
 		try:
@@ -177,7 +192,7 @@ def takeCommand():
 	else: err("Wrong Input!!!")
 
 
-		
+
 while(takeCommand()!=-1):
 	pass
 	
