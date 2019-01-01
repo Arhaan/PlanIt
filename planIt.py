@@ -29,7 +29,6 @@ def pr(s): #Prints to the console
 	print(">>>>",s)
 def deb(s): #For debug statments
 	print(bcolors.BLUEDEB,">>>>",s,bcolors.ENDC)#debug statements
-	pass
 def err(s): #For error and warning statments to the user
 	print(bcolors.WARNING,">>>>",s,"For assistance type 'help'",bcolors.ENDC)
 def sendInfoToUser(s): #Other warnings
@@ -45,7 +44,7 @@ def checkIfTimingIsFree(start , end): #Checks if we the timing of the new event 
 			if(len(a) == 0):continue
 			s2 = i[1]
 			e2 = i[2]
-			if((start>=s2 and e2>start) or (s2<end and e2>=end)or(start>=s2 and e2>=end)): 
+			if((start>=s2 and e2>start) or (s2<end and e2>=end)or(start>=s2 and e2>=end)):
 				err("Timings of " + i[0] +" clashes with the inputted timing.")
 				err("Delete "+i[0]+" to schedule this event[Y/N]?")
 				ch = inp()
@@ -97,7 +96,7 @@ def display():
 		f = fl.readlines()
 		for i in f:
 			success(i)
-def help():
+def helpCommand():
 	commandFile = open("commands.txt","r")
 	commandArray = commandFile.readlines()
 	for i in commandArray:
@@ -109,7 +108,6 @@ def changeCommandShortcut(name, newName):
 	done = False
 	with open("commands.txt","r") as commandFile:
 		commandArray = commandFile.readlines()
-	
 	with open("commands.txt","w") as commandFile:
 		for a in commandArray:
 			if(a.split(" ")[0].strip() == name +":"):
@@ -158,7 +156,7 @@ def takeCommand():
 		#Format start correctly HHMM
 		start = formatHHMM(start)
 		#Format end HHMM
-		end = formatHHMM(end)		
+		end = formatHHMM(end)	
 		#Check if inputs are valid
 		if((start>=end)or(start>"2400")or(end>"2400")or(start[2]+start[3]>"59")or(end[2]+end[3]>"59")):
 			err("Invalid timing")
@@ -181,11 +179,11 @@ def takeCommand():
 	elif (c == commands.displayCommand):
 		display()
 	elif(c == commands.helpCommand):
-		help()
+		helpCommand()
 	elif(c == commands.changeCommandShortcut):
 		try:
 			name = comm[1]
-			newName = comm[2] 
+			newName = comm[2]
 			changeCommandShortcut(name, newName)
 		except:
 			err("Wrong Input")
