@@ -1,3 +1,4 @@
+
 data = "usrData.txt"
 tt = "timeTable.txt"
 commandFile = open("commands.txt","r")
@@ -22,10 +23,12 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 #I/O formatting start
+
 def inp(): #Takes Input from the user
 	s = input(">>>>")
 	return s
 def pr(s): #Prints to the console
+	
 	print(">>>>",s)
 def deb(s): #For debug statments
 	print(bcolors.BLUEDEB,">>>>",s,bcolors.ENDC)#debug statements
@@ -69,7 +72,6 @@ def deleteEvent(name, start):
 	deleted = False
 	with open(tt, "r") as fl:
 		arr = fl.readlines()
-	
 	with open(tt,"w") as f2:
 		for a in arr:
 			i = a.split(" ")
@@ -113,7 +115,7 @@ def changeCommandShortcut(name, newName):
 			if(a.split(" ")[0].strip() == name +":"):
 				commandFile.write(a.split(" ")[0].strip()+ " "+ newName + " ")
 			elif (a.split(" ")[1].strip() == name):
-				commandFile.write(a.split(" ")[0].strip()+ " "+ newName + " ")	
+				commandFile.write(a.split(" ")[0].strip()+ " "+ newName + " ")
 			else:
 				commandFile.write(a)
 
@@ -148,7 +150,7 @@ def takeCommand():
 		#Format start correctly HHMM
 		start = formatHHMM(start)
 		#Format end HHMM
-		end = formatHHMM(end)	
+		end = formatHHMM(end)
 		#Check if inputs are valid
 		if((start>=end)or(start>"2400")or(end>"2400")or(start[2]+start[3]>"59")or(end[2]+end[3]>"59")):
 			err("Invalid timing")
@@ -183,4 +185,3 @@ def takeCommand():
 
 while(takeCommand()!=-1):
 	pass
-	
