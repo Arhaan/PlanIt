@@ -28,7 +28,6 @@ def inp(): #Takes Input from the user
 	s = input(">>>>")
 	return s
 def pr(s): #Prints to the console
-	
 	print(">>>>",s)
 def deb(s): #For debug statments
 	print(bcolors.BLUEDEB,">>>>",s,bcolors.ENDC)#debug statements
