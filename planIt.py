@@ -112,6 +112,12 @@ def changeCommandShortcut(name, newName):
 		for a in commandArray:
 			if(a.split(" ")[0].strip() == name +":"):
 				commandFile.write(a.split(" ")[0].strip()+ " "+ newName + " ")
+			elif (a.split(" ")[1].strip() == name):
+				commandFile.write(a.split(" ")[0].strip()+ " "+ newName + " ")	
+			else:
+				commandFile.write(a)
+
+			if(a.split(" ")[1].strip() == name or a.split(" ")[0].strip() == name +":"):
 				k = -1
 				try:
 					commandFile.write(a.split(" ")[2].strip())
@@ -122,23 +128,9 @@ def changeCommandShortcut(name, newName):
 					if(k<3):
 						continue
 					commandFile.write(" "+b)
-
-				done= True
-			elif (a.split(" ")[1].strip() == name ):
-				commandFile.write(a.split(" ")[0].strip()+ " "+ newName + " ")
-				try:
-					commandFile.write(a.split(" ")[2].strip())
-				except:
-					commandFile.write("\n")
-				for b in a.split(" "):
-					k = k+1
-					if(k<3):
-						continue
-					commandFile.write(" "+b)
-			else:
-				commandFile.write(a)
+				done = True
 	if(done):
-		success("Event chnaged successfuly!!!")
+		success("Command changed successfuly!!!")
 	else:
 		err("Invalid Input")
 def takeCommand():
