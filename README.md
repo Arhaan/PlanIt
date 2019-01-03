@@ -25,3 +25,5 @@ You will need to have python installed. If you dont have python installed have a
 * Clone this repository onto your local machine
 * Navigate to this repository in the terminal or command prompt
 * run `python planIt.py`
+
+Do comment about any new features you would like to see!
