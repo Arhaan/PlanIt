@@ -1,3 +1,9 @@
+__author__ = "Arhaan Ahmad"
+__license__ = "Apache 2.0"
+__version__ = "v0.1.0Beta"
+__email__ = "arhaan.ahmad2003@gmail.com"
+__status__ = "Beta"
+
 
 data = "usrData.txt"
 tt = "timeTable.txt"
@@ -12,7 +18,7 @@ class commands:
 	displayCommand = commandArray[3].split(" ")[1].strip()
 	helpCommand = commandArray[4].split(" ")[1].strip()
 	changeCommandShortcut = commandArray[5].split(" ")[1].strip()
-class bcolors:
+class bcolors(object):
 	#Stores the various colours for output formatting
     HEADER = '\033[95m'
     BLUEDEB = '\033[94m'
@@ -22,15 +28,18 @@ class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
+
+	
 #I/O formatting start
 
 def inp(): #Takes Input from the user
-	s = input(">>>>")
+	s = input('>>>>')
 	return s
 def pr(s): #Prints to the console
-	print(">>>>",s)
+	print('>>>>',s)
 def deb(s): #For debug statments
-	print(bcolors.BLUEDEB,">>>>",s,bcolors.ENDC)#debug statements
+	print(bcolors.BLUEDEB,'>>>>',s,bcolors.ENDC)#debug statements
+
 def err(s): #For error and warning statments to the user
 	print(bcolors.WARNING,">>>>",s,"For assistance type 'help'",bcolors.ENDC)
 def sendInfoToUser(s): #Other warnings
@@ -102,6 +111,7 @@ def helpCommand():
 	commandArray = commandFile.readlines()
 	for i in commandArray:
 		sendInfoToUser(i)
+	sendInfoToUser("To report a bug contact arhaan.ahmad2003@gmail.com")
 def changeCommandShortcut(name, newName):
 	if(name == 'help'):
 		sendInfoToUser("This event can't be changed")
