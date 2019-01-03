@@ -5,8 +5,6 @@
 
 ## CLI-based Day Planner
 
-This is a Beta version and is still under development.
-
 `timetable.txt` stores the timetable for each day.
 
 `commands.txt` stores the commands and their shortcuts.
@@ -22,7 +20,7 @@ This is a Beta version and is still under development.
 
 ## Installation
 
-As I said this application has not yet been finished. You will need to have python installed. If you dont have python installed have a look at [Python](https://www.python.org/downloads/). So to install it you will have to:
+You will need to have python installed. If you dont have python installed have a look at [Python](https://www.python.org/downloads/). To install this app you will have to:
 
 * Clone this repository onto your local machine
 * Navigate to this repository in the terminal or command prompt
