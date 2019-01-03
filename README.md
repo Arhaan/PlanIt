@@ -1,6 +1,7 @@
 # PlanIt
 
 [![LICENSE](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/Arhaan/PlanIt/blob/master/LICENSE)
+[![HitCount](http://hits.dwyl.io/Arhaan/PlanIt.svg)](http://hits.dwyl.io/Arhaan/PlanIt)
 
 ## CLI-based Day Planner
 
