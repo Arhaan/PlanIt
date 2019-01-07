@@ -4,6 +4,9 @@ __version__ = "v0.1.0Beta"
 __email__ = "arhaan.ahmad2003@gmail.com"
 __status__ = "Beta"
 
+###Imports
+import datetime
+###Imports End
 
 data = "usrData.txt"
 tt = "timeTable.txt"
@@ -18,6 +21,7 @@ class commands:
 	displayCommand = commandArray[3].split(" ")[1].strip()
 	helpCommand = commandArray[4].split(" ")[1].strip()
 	changeCommandShortcut = commandArray[5].split(" ")[1].strip()
+	nowCommand = commandArray[6].split(" ")[1].strip()
 class bcolors(object):
 	#Stores the various colours for output formatting
     HEADER = '\033[95m'
@@ -29,17 +33,14 @@ class bcolors(object):
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-	
 #I/O formatting start
-
 def inp(): #Takes Input from the user
 	s = input('>>>>')
 	return s
 def pr(s): #Prints to the console
-	print('>>>>',s)
+	print(' >>>>',s)
 def deb(s): #For debug statments
 	print(bcolors.BLUEDEB,'>>>>',s,bcolors.ENDC)#debug statements
-
 def err(s): #For error and warning statments to the user
 	print(bcolors.WARNING,">>>>",s,"For assistance type 'help'",bcolors.ENDC)
 def sendInfoToUser(s): #Other warnings
@@ -144,6 +145,40 @@ def changeCommandShortcut(name, newName):
 		success("Command changed successfuly!!!")
 	else:
 		err("Invalid Input")
+
+def now():
+	t= datetime.datetime.now()
+	t.strftime("%H%M")
+	t = str(t.hour)+str(t.minute)
+	success("Present time is "+t)
+	sortTimeTable()
+	with open(tt, "r") as fl:
+		f = fl.readlines()
+		found = False
+		for i in f:
+			starti = i.split(" ")[1].strip()
+			endi = i.split(" ")[2].strip()
+			if(found):
+				success("Next event is "+i.split(" ")[0].strip()+" from "+starti +" to "+endi)
+				break
+			if(t>=starti and t<=endi):
+				success("The event scheduled at this moment is "+i.split(" ")[0].strip())
+				success("It will end at "+endi)
+				found = True
+			elif(t>starti):
+				success("No event scheduled at this time")
+				success("Next event is "+i.split(" ")[0].strip()+" from "+starti +" to "+endi)
+				break
+		
+		if(not found):
+			for i in f:
+				success("No event scheduled at this time")
+				success("Next event is "+i.split(" ")[0].strip()+" from "+starti +" to "+endi)
+				break
+
+	return
+
+
 def takeCommand():
 	comm1 = inp()
 	comm = comm1.split(" ")
@@ -190,7 +225,8 @@ def takeCommand():
 			changeCommandShortcut(name, newName)
 		except:
 			err("Wrong Input")
+	elif(c == commands.nowCommand):
+		now()
 	else: err("Wrong Input!!!")
-
 while(takeCommand()!=-1):
 	pass

@@ -1,7 +1,6 @@
 # PlanIt
 
 [![LICENSE](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/Arhaan/PlanIt/blob/master/LICENSE)
-[![HitCount](http://hits.dwyl.io/Arhaan/PlanIt.svg)](http://hits.dwyl.io/Arhaan/PlanIt)
 
 ## CLI-based Day Planner
 
@@ -19,6 +18,7 @@ This is a Beta version and is still under development.
 * displayCommand : display an event :  `displayCommand`
 * _helpCommand_ : To get help. This command cannot be changed : `help`
 * _changeCommandShortcut_: To change shortcut to a command : `changeCommand commandName shortcutName`
+* _nowCommand_ : To display the current Event and the next Event scheduled. : `now`
 
 ## Installation
 
