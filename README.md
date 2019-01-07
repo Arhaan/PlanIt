@@ -4,11 +4,13 @@
 
 ## CLI-based Day Planner
 
-v1.0.1
+`v1.0.1`
 
 `timetable.txt` stores the timetable for each day.
 
 `commands.txt` stores the commands and their shortcuts.
+
+Feel free to mail me about the things you liked and disliked in the app. Any features you would like to see in future releases. Have a look at `CONTRIBUTING.md` for further details.
 
 ## Commands
 
