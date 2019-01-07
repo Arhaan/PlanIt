@@ -1,6 +1,6 @@
 __author__ = "Arhaan Ahmad"
 __license__ = "Apache 2.0"
-__version__ = "v0.1.0Beta"
+__version__ = "v1.0.1"
 __email__ = "arhaan.ahmad2003@gmail.com"
 __status__ = "Beta"
 

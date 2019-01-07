@@ -4,7 +4,7 @@
 
 ## CLI-based Day Planner
 
-This is a Beta version and is still under development.
+v1.0.1
 
 `timetable.txt` stores the timetable for each day.
 
