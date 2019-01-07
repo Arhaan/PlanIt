@@ -27,7 +27,7 @@ Feel free to mail me about the things you liked and disliked in the app. Any fea
 You will need to have python installed. If you dont have python installed have a look at [Python](https://www.python.org/downloads/). To install this app you will have to:
 
 * Download [PlanIt](https://github.com/Arhaan/PlanIt/archive/v1.0.1.tar.gz) (for Linux and Mac) or [PlanIt](https://github.com/Arhaan/PlanIt/archive/v1.0.1.zip) (for Windows)
-* Extract the above `tar.gz` file.
+* Extract the above `tar.gz` (Linux and Mac) or `.zip`(Windows) file.
 * Navigate to this repository in the terminal or command prompt
 * run `python planIt.py`
 
