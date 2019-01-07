@@ -11,3 +11,4 @@ Also comments about my code quality and other best practices I haven't followed 
 ## For non-Developers
 
 Your contribution is as important as others. Try to use the application as much as posible and help us find any bugs. Recommendations for new features are welcome.
+You can report the bugs and request for new features using `Issues` on `Github` or by mailing me at `arhaan.ahmad2003@gmail.com`
