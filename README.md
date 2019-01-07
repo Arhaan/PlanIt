@@ -22,8 +22,11 @@ This is a Beta version and is still under development.
 
 ## Installation
 
-As I said this application has not yet been finished. You will need to have python installed. If you dont have python installed have a look at [Python](https://www.python.org/downloads/). So to install it you will have to:
+You will need to have python installed. If you dont have python installed have a look at [Python](https://www.python.org/downloads/). To install this app you will have to:
 
-* Clone this repository onto your local machine
+* Download [PlanIt](https://github.com/Arhaan/PlanIt/archive/v1.tar.gz)
+* Extract the above `tar.gz` file.
 * Navigate to this repository in the terminal or command prompt
 * run `python planIt.py`
+
+Do comment about any new features you would like to see!
