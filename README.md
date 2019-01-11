@@ -4,6 +4,22 @@
 
 ## CLI-based Day Planner
 
+The project website is [Plan It](https://arhaan.github.io/PlanIt/)
+
+## Why should I use it?
+
+Are you a student? A professor? An entrepreneur? None of these? Then this app is for you?
+
+I have come across various day planners. But none of them has been able meet my needs. So I am trying to build this customizable daily planner.
+
+## Features
+
+* Set events along with their start and end times.
+* Customise the commands as per your wish.
+* Quickly find what event is scheduled next.
+
+## Details
+
 `v1.0.1`
 
 `timetable.txt` stores the timetable for each day.
@@ -17,7 +33,7 @@ Feel free to mail me about the things you liked and disliked in the app. Any fea
 * _setEvent_ : To set a new Event : `setEvent Name startTime EndTime`
 * _quitCommand_ : To quit the program : `quit`
 * _deleteEvent_ : Delete an event : `deleteCommand eventStartTime`
-* displayCommand : display an event :  `displayCommand`
+* _displayCommand_ : display an event :  `displayCommand`
 * _helpCommand_ : To get help. This command cannot be changed : `help`
 * _changeCommandShortcut_: To change shortcut to a command : `changeCommand commandName shortcutName`
 * _nowCommand_ : To display the current Event and the next Event scheduled : `now`
