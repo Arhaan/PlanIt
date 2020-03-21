@@ -8,9 +8,9 @@ The project website is [Plan It](https://arhaan.github.io/PlanIt/)
 
 ## Why should I use it?
 
-Are you a student? A professor? An entrepreneur? None of these? Then this app is for you?
+Are you a student? A professor? An entrepreneur? None of these? Then this app is for you.
 
-I have come across various day planners. But none of them has been able meet my needs. So I am trying to build this customizable daily planner.
+I have come across various day planners. But none of them has been able meet my needs. So I am trying to build this customizable daily planner. This is still a work in progress
 
 ## Features
 
