@@ -11,17 +11,17 @@ import datetime
 data = "usrData.txt"
 tt = "timeTable.txt"
 commandFile = open("commands.txt","r")
-commandArray = commandFile.readlines()
-
+#commandArray = commandFile.readlines().split(" ")[1].strip()
+commandArray = [i.split(" ")[1].strip() for i in commandFile]
 class commands:
 	#Stores the various commands
-	setCommand = commandArray[0].split(" ")[1].strip()
-	quitCommand = commandArray[1].split(" ")[1].strip()
-	deleteCommand = commandArray[2].split(" ")[1].strip()
-	displayCommand = commandArray[3].split(" ")[1].strip()
-	helpCommand = commandArray[4].split(" ")[1].strip()
-	changeCommandShortcut = commandArray[5].split(" ")[1].strip()
-	nowCommand = commandArray[6].split(" ")[1].strip()
+	setCommand = commandArray[0]
+	quitCommand = commandArray[1]
+	deleteCommand = commandArray[2]
+	displayCommand = commandArray[3]
+	helpCommand = commandArray[4]
+	changeCommandShortcut = commandArray[5]
+	nowCommand = commandArray[6]
 class bcolors(object):
 	#Stores the various colours for output formatting
     HEADER = '\033[95m'
@@ -48,6 +48,7 @@ def sendInfoToUser(s): #Other warnings
 def success(s): #For a positive feedback
 	print(bcolors.OKGREEN,">>>>",s,bcolors.ENDC)
 #IO formatting end
+
 def checkIfTimingIsFree(start , end): #Checks if we the timing of the new event is free
 	with open(tt, "r") as fl:
 		arr = fl.readlines()
@@ -148,9 +149,7 @@ def changeCommandShortcut(name, newName):
 
 def now():
 	t= datetime.datetime.now()
-	t.strftime("%H%M")
-	t = str(t.hour)+str(t.minute)
-	success("Present time is "+t)
+	success("Present time is "+t.strftime("%H%M"))
 	sortTimeTable()
 	with open(tt, "r") as fl:
 		f = fl.readlines()
@@ -169,7 +168,7 @@ def now():
 				success("No event scheduled at this time")
 				success("Next event is "+i.split(" ")[0].strip()+" from "+starti +" to "+endi)
 				break
-		
+
 		if(not found):
 			for i in f:
 				success("No event scheduled at this time")
@@ -202,7 +201,7 @@ def takeCommand():
 		if(not checkIfTimingIsFree(start,end)):
 			return 0
 		with open(tt,"a") as f:
-    			f.write(name+" "+start+" "+end+"\n")
+    		f.write(name+" "+start+" "+end+"\n")
 		pr(bcolors.OKGREEN+"Event Set!!"+bcolors.ENDC)
 		sortTimeTable()
 		return
