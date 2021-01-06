@@ -153,8 +153,8 @@ def changeCommandShortcut(name, newName):
 		err("Invalid Input")
 
 def now():
-	t= datetime.datetime.now()
-	success("Present time is "+t.strftime("%H%M"))
+	t= datetime.datetime.now().strftime("%H%M")
+	success("Present time is "+t)
 	sortTimeTable()
 	with open(tt, "r") as fl:
 		f = fl.readlines()
