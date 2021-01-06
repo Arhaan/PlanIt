@@ -2,6 +2,6 @@ setEvent: setEvent    To set a new Event: `setEvent name startTime endTime`
 quitCommand: quit     To quit the program
 deleteEvent: delete    Delete an event : `deleteCommand eventName eventStartTime`
 displayCommand: display     display an event :  `displayCommand`
-helpCommand: help    To get help. Thjs command cannot be changed : `help`
+helpCommand: help    To get help. This command cannot be changed : `help`
 changeCommandShortcut: change     To change a command : `changeCommand commandName newName`
 nowCommand: now     To find out what is the present and next scheduled event
