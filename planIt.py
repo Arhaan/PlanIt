@@ -35,7 +35,7 @@ class bcolors(object):
 
 #I/O formatting start
 def inp(): #Takes Input from the user
-	s = input('>>>>')
+	s = input('>>>> ')
 	return s
 def pr(s): #Prints to the console
 	print(' >>>>',s)
