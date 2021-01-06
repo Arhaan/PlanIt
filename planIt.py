@@ -206,7 +206,7 @@ def takeCommand():
 		if(not checkIfTimingIsFree(start,end)):
 			return 0
 		with open(tt,"a") as f:
-         		f.write(name+" "+start+" "+end+"\n")
+			f.write(name+" "+start+" "+end+"\n")
 		pr(bcolors.OKGREEN+"Event Set!!"+bcolors.ENDC)
 		sortTimeTable()
 		return
