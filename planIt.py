@@ -103,11 +103,16 @@ def formatHHMM(s):
 			s = "0"+s
 	return s
 def display():
-	sortTimeTable()
-	with open(tt, "r") as fl:
-		f = fl.readlines()
-		for i in f:
-			success(i)
+        sortTimeTable()
+        shown = False
+        with open(tt, "r") as fl:
+                f = fl.readlines()
+                for i in f:
+                        shown = True
+                        success(i)
+        if(not shown):
+            pr("The timetable is empty")
+
 def helpCommand():
 	commandFile = open("commands.txt","r")
 	commandArray = commandFile.readlines()
@@ -201,7 +206,7 @@ def takeCommand():
 		if(not checkIfTimingIsFree(start,end)):
 			return 0
 		with open(tt,"a") as f:
-    		f.write(name+" "+start+" "+end+"\n")
+         		f.write(name+" "+start+" "+end+"\n")
 		pr(bcolors.OKGREEN+"Event Set!!"+bcolors.ENDC)
 		sortTimeTable()
 		return
@@ -227,5 +232,8 @@ def takeCommand():
 	elif(c == commands.nowCommand):
 		now()
 	else: err("Wrong Input!!!")
+
+
+print("Type `help` if you don't know what to do")
 while(takeCommand()!=-1):
 	pass
